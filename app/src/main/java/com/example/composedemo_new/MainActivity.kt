@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             ComposeDemo_newTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Compose",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -38,10 +38,17 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun GreetingPreview() {
-    ComposeDemo_newTheme {
-        Greeting("Android")
+    ComposeDemoTheme {
+        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+            Greeting("Compose", modifier = Modifier.padding(innerPadding))
+        }
     }
+}
+
+@Composable
+fun ComposeDemoTheme(content: @Composable () -> Unit) {
+    TODO("Not yet implemented")
 }
